@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct TableItem {
-//    let month: String
+    let month: String
     let weekDay: String
     let weekDate: String
 //    let weekDay: String
@@ -21,6 +21,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     // Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    
     
     // Variables
     var entries: [Entry] = []
@@ -66,47 +67,59 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         
         
-        // From DateHelper extension
+        ////// From DateHelper extension
         
     
         // Not sure how Section works for CollectionView ???
         sections.append(now.monthToString()) // DECEMBER
         var sectionItems = [TableItem]()
         
+        
+
+        
         // Ideally we want to register 1. When the user sign in the first time
         // So that it will start the calendar, until today's date
         
         
         // Today-9
-        sectionItems.append(TableItem(weekDay: now.dateBySubtractingDays(9).shortWeekdayToString(), weekDate: now.dateBySubtractingDays(9).toString(.custom("d"))))
+        date = now.dateBySubtractingDays(9)
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
         
         // Today-8
-        sectionItems.append(TableItem(weekDay: now.dateBySubtractingDays(8).shortWeekdayToString(), weekDate: now.dateBySubtractingDays(8).toString(.custom("d"))))
+        date = now.dateBySubtractingDays(8)
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
         
         // Today-7
-        sectionItems.append(TableItem(weekDay: now.dateBySubtractingDays(7).shortWeekdayToString(), weekDate: now.dateBySubtractingDays(7).toString(.custom("d"))))
+        date = now.dateBySubtractingDays(7)
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
         
         // Today-6
-        sectionItems.append(TableItem(weekDay: now.dateBySubtractingDays(6).shortWeekdayToString(), weekDate: now.dateBySubtractingDays(6).toString(.custom("d"))))
+        date = now.dateBySubtractingDays(6)
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
         
         // Today-5
-        sectionItems.append(TableItem(weekDay: now.dateBySubtractingDays(5).shortWeekdayToString(), weekDate: now.dateBySubtractingDays(5).toString(.custom("d"))))
+        date = now.dateBySubtractingDays(5)
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
         
         // Today-4
-        sectionItems.append(TableItem(weekDay: now.dateBySubtractingDays(4).shortWeekdayToString(), weekDate: now.dateBySubtractingDays(4).toString(.custom("d"))))
+        date = now.dateBySubtractingDays(4)
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
         
         // Today-3
-        sectionItems.append(TableItem(weekDay: now.dateBySubtractingDays(3).shortWeekdayToString(), weekDate: now.dateBySubtractingDays(3).toString(.custom("d"))))
-        
+        date = now.dateBySubtractingDays(3)
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
         
         // Today-2
-        sectionItems.append(TableItem(weekDay: now.dateBySubtractingDays(2).shortWeekdayToString(), weekDate: now.dateBySubtractingDays(2).toString(.custom("d"))))
+        date = now.dateBySubtractingDays(2)
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
         
         // Yesterday
-        sectionItems.append(TableItem(weekDay: now.dateBySubtractingDays(1).shortWeekdayToString(), weekDate: now.dateBySubtractingDays(1).toString(.custom("d"))))
+        date = now.dateBySubtractingDays(1)
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
         
         // Today
-        sectionItems.append(TableItem(weekDay: now.shortWeekdayToString(), weekDate: now.toString(.custom("d"))))
+        date = now
+        sectionItems.append(TableItem(month: date.monthToString(), weekDay: date.shortWeekdayToString(), weekDate: date.toString(.custom("d"))))
             
         
         items.append(sectionItems)
@@ -135,6 +148,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarCell
         let item = items[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
+        cell.monthLabel.text = item.month
         cell.dayLabel.text = item.weekDay
         cell.dateLabel.text = item.weekDate
         
@@ -160,7 +174,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("selected cell in column \(indexPath.item)")
     }
-
+    
     
 
 }
