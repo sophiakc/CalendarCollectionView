@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		21A094004E25D846789D1A6C /* Pods_CalendarCollectionViewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3937CF37B671B534F84AC3FE /* Pods_CalendarCollectionViewUITests.framework */; };
 		7B6A8509A0401EE3A6861AF5 /* Pods_CalendarCollectionViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93763B25C40C2B4D379F24D5 /* Pods_CalendarCollectionViewTests.framework */; };
+		7E90E09E1DF38F4300C8B616 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E90E09D1DF38F4300C8B616 /* DateHelper.swift */; };
 		D9A19D0B373DA49C5534DF72 /* Pods_CalendarCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AF9F062432BF0DA3F7FC82 /* Pods_CalendarCollectionView.framework */; };
 		ED6F37031DF0B7D6009ABE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F37021DF0B7D6009ABE17 /* AppDelegate.swift */; };
 		ED6F37051DF0B7D6009ABE17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6F37041DF0B7D6009ABE17 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 		3937CF37B671B534F84AC3FE /* Pods_CalendarCollectionViewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalendarCollectionViewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434EB67DEA00845173C9F738 /* Pods-CalendarCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarCollectionView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalendarCollectionView/Pods-CalendarCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 		74E5CA1079B12B1569B308A1 /* Pods-CalendarCollectionViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarCollectionViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalendarCollectionViewUITests/Pods-CalendarCollectionViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E90E09D1DF38F4300C8B616 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		900951FD089B0B10D994BFD5 /* Pods-CalendarCollectionViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarCollectionViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalendarCollectionViewTests/Pods-CalendarCollectionViewTests.release.xcconfig"; sourceTree = "<group>"; };
 		93763B25C40C2B4D379F24D5 /* Pods_CalendarCollectionViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalendarCollectionViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16106D7B7E8DE23519B5370 /* Pods-CalendarCollectionViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarCollectionViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalendarCollectionViewTests/Pods-CalendarCollectionViewTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7E90E09C1DF38F3A00C8B616 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7E90E09D1DF38F4300C8B616 /* DateHelper.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
 		B7D466DE3C407E9B116DD47B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		ED6F36F61DF0B7D6009ABE17 = {
 			isa = PBXGroup;
 			children = (
+				7E90E09C1DF38F3A00C8B616 /* Sources */,
 				ED6F37011DF0B7D6009ABE17 /* CalendarCollectionView */,
 				ED6F37161DF0B7D7009ABE17 /* CalendarCollectionViewTests */,
 				ED6F37211DF0B7D7009ABE17 /* CalendarCollectionViewUITests */,
@@ -453,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED6F37051DF0B7D6009ABE17 /* ViewController.swift in Sources */,
+				7E90E09E1DF38F4300C8B616 /* DateHelper.swift in Sources */,
 				ED6F37311DF0B929009ABE17 /* CalendarCell.swift in Sources */,
 				ED6F37031DF0B7D6009ABE17 /* AppDelegate.swift in Sources */,
 			);
@@ -642,6 +654,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = CBXAQN69JX;
 				INFOPLIST_FILE = CalendarCollectionViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.CalendarCollectionViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -658,6 +671,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = CBXAQN69JX;
 				INFOPLIST_FILE = CalendarCollectionViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.CalendarCollectionViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -673,6 +687,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = CBXAQN69JX;
 				INFOPLIST_FILE = CalendarCollectionViewUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.CalendarCollectionViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -688,6 +703,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = CBXAQN69JX;
 				INFOPLIST_FILE = CalendarCollectionViewUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.CalendarCollectionViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
